@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+  
+import React, { Component } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+  withRouter
+} from "react-router-dom";
+
+
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Home from './pages/Home';
+import Time from './pages/Time';
+import Weather from './pages/Weather';
+
+
+class App extends Component {
+  render() {
+    const { history } = this.props
+
+    
+    return (
+      <div className="App">
+        
+        <Switch>
+        <Route history={history} path='/home' component={Home} />
+          <Route history={history} path='/time' component={Time} />
+          <Route history={history} path='/weather' component={Weather} />
+          <Redirect from='/' to='/Home'/>
+        </Switch>
+        
+      </div>
+    );
+  }
 }
 
-export default App;
+export default withRouter(App)
