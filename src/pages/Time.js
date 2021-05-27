@@ -1,16 +1,22 @@
-import React, { Component } from "react";
-
+import React from "react";
+import DateTime from '../components/DateTime/DateTime'
+import { Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
-export default class Time extends Component {
-    render() {
-        
+function Time () {
+           
         return (
             <div className="container">
-                <button >
-                    <Link to="/">Назад</Link>
-                </button>
+                <DateTime />
+                
+                    <Link to="/">
+                        {/* Пофиксить ширину кнопки */  }
+                        <Button variant='dark' style={{width: '210px', marginTop: '10px'}}>Back</Button>
+                    </Link>
+                
             </div>
         );
-    }
+    
 }
+
+export default Time;
