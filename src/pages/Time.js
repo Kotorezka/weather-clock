@@ -11,7 +11,7 @@ function Time () {
                 
                     <Link to="/">
                         {/* Пофиксить ширину кнопки */  }
-                        <Button variant='dark' style={{width: '210px', marginTop: '10px'}}>Back</Button>
+                        <Button variant='dark' style={{width: '210px', marginTop:'10px'}}>Back</Button>
                     </Link>
                 
             </div>
